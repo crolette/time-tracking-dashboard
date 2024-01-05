@@ -1,0 +1,436 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500");
+
+/* RESET CSS */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+button,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  color: unset;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* END RESET CSS */
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --work: hsl(15, 100%, 70%);
+  --play: hsl(195, 74%, 62%);
+  --study: hsl(348, 100%, 68%);
+  --exercise: hsl(145, 58%, 55%);
+  --social: hsl(264, 64%, 52%);
+  --selfcare: hsl(43, 84%, 65%);
+  --blue: hsl(246, 80%, 60%);
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --des-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  row-gap: 16px;
+  width: 100vw;
+  height: 100vh;
+  font-size: 18px;
+  background: var(--very-dark-blue);
+  color: var(--white);
+}
+
+/* DASHBOARD */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 255px);
+  gap: 30px;
+}
+
+#user {
+  grid-column: 1;
+  grid-row: span 2;
+  background-color: var(--dark-blue);
+}
+
+#work {
+  background-color: var(--work);
+
+  & > .dashboard__header {
+    background-image: url("../images/icon-work.svg");
+  }
+}
+
+#play {
+  background-color: var(--play);
+
+  & > .dashboard__header {
+    background-image: url("../images/icon-play.svg");
+  }
+}
+
+#study {
+  background-color: var(--study);
+
+  & > .dashboard__header {
+    background-image: url("../images/icon-study.svg");
+  }
+}
+
+#exercise {
+  background-color: var(--exercise);
+
+  & > .dashboard__header {
+    background-image: url("../images/icon-exercise.svg");
+  }
+}
+
+#social {
+  background-color: var(--social);
+
+  & > .dashboard__header {
+    background-image: url("../images/icon-social.svg");
+  }
+}
+#selfcare {
+  background-color: var(--selfcare);
+
+  & > .dashboard__header {
+    background-image: url("../images/icon-self-care.svg");
+  }
+}
+
+.dashboard__card {
+  border-radius: 16px;
+
+  & > div:not(.dashboard__header) {
+    padding: 30px;
+  }
+
+  & > .dashboard__header {
+    height: 45px;
+    background-repeat: no-repeat;
+    background-position: right 16px top -8px;
+  }
+}
+
+.dashboard__user {
+  background-color: var(--blue);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  line-height: 2.5em;
+
+  & > img {
+    width: 84px;
+    border: 3px solid white;
+    border-radius: 50%;
+  }
+
+  & > p {
+    color: var(--pale-blue);
+    font-size: 0.75em;
+
+    & > span {
+      font-weight: 300;
+      font-size: 3em;
+      color: white;
+    }
+  }
+}
+.dashboard__choice {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  font-weight: 400;
+
+  & > a:not(.active) {
+    color: var(--des-blue);
+  }
+
+  & > a:active,
+  a:hover,
+  a.active {
+    color: var(--white);
+  }
+}
+
+.dashboard__header {
+  height: 35px;
+  border-radius: 16px 16px 0 0;
+  position: relative;
+}
+
+.dashboard__datas {
+  /* height: 200px; */
+  background-color: var(--dark-blue);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+
+  &:hover {
+    background-color: var(--des-blue);
+  }
+
+  & .datas__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+
+    & svg {
+      cursor: pointer;
+      color: var(--pale-blue);
+
+      &:hover {
+        color: var(--white);
+      }
+    }
+  }
+
+  & .datas__figures {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-weight: 300;
+
+    & p:nth-of-type(1) {
+      font-size: 3em;
+    }
+    & p:nth-of-type(2) {
+      font-size: 0.875em;
+      color: var(--pale-blue);
+    }
+  }
+}
+
+/* FOOTER LOGO CROLWEB */
+footer {
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+}
+
+.footer__logo {
+  img {
+    width: 50px;
+  }
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 1200px) {
+  .dashboard {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  #user {
+    grid-column: span 3;
+    grid-row: 1;
+  }
+
+  .dashboard__user {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    line-height: 1.5em;
+
+    & > img {
+      width: 70px;
+      height: 70px;
+    }
+
+    & > p > span {
+      display: block;
+      font-size: 1.5em;
+    }
+  }
+  .dashboard__choice {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    height: unset;
+  }
+
+  #user {
+    grid-column: 1;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+    max-width: 330px;
+    gap: 24px;
+  }
+  .dashboard__card {
+    border-radius: 16px;
+
+    & > div:not(.dashboard__header) {
+      padding: 30px 24px;
+    }
+
+    & > .dashboard__header {
+      height: 30px;
+    }
+  }
+
+  .dashboard__datas {
+    gap: 16px;
+
+    & .datas__figures {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      & p:nth-of-type(1) {
+        font-size: 1.5em;
+      }
+      & p:nth-of-type(2) {
+        margin-top: 0;
+        font-size: 0.65em;
+      }
+    }
+  }
+}
