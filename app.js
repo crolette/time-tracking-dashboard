@@ -65,4 +65,4 @@ function getDataJson(datas, cardName) {
       return element;
     }
   }
-
+}
