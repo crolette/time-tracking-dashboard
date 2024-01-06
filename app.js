@@ -37,7 +37,7 @@ function timelineChoiceClass() {
 }
 
 async function retrieveJson() {
-  const requestURL = "data.json";
+  const requestURL = "./data.json";
   const request = new Request(requestURL);
   const response = await fetch(request);
   const datas = await response.json();
