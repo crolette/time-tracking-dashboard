@@ -26,8 +26,9 @@ Users should be able to:
 - Switch between viewing Daily, Weekly, and Monthly stats
 
 ### Screenshot
-
+https://github.com/crolette/time-tracking-dashboard/assets/73672696/5c6abc9d-301e-40bb-8568-756356f7442f
 ![](./images/screenshot.png)
+
 
 ### Links
 
