@@ -43,6 +43,8 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Media Queries to adjust to every screen sizes
+- JSON manipulation
+- Local storage
 
 ### What I learned
 
@@ -61,13 +63,38 @@ To see how you can add code snippets, see below:
 }
 ```
 
+Retrieve JSON Datas
+
+```js
+async function retrieveJson() {
+  const requestURL = "data.json";
+  const request = new Request(requestURL);
+  const response = await fetch(request);
+  const datas = await response.json();
+}
+```
+
+Local storage functions to store the selected timeline to display the datas
+
+```js
+function verifyLocalStorage() {
+  if (localStorage.getItem("timeline") == null) {
+    localStorage.setItem("timeline", "daily");
+  } else {
+    timelineChoice = localStorage.getItem("timeline");
+  }
+}
+```
+
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+JSON manipulation / Grid
 
 ### Useful resources
 
 - [CSS Tricks - Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) - This helped me for using Grid.
+- [MDN - LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) - Local Storage documentation
+- [MDN - JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) - JSON documentation
 
 ## Author
 
